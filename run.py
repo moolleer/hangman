@@ -119,8 +119,7 @@ def game_run():
     #for the letters in the word
     guesses = False
     
-
-    while tries > 0 and guesses == False:
+    while tries > 0 and guesses is False:
         print(f"You have {tries} left")
         print(f"You have guessed the letters: {letters_guessed}")
         print("---------------------------------------------------")
@@ -129,19 +128,30 @@ def game_run():
         if len(user_guess) == 1 and user_guess.isalpha():
             # If user already guessed same letter
             if user_guess in letters_guessed:
-                print(f"You have already guessed letter {user_guess}.")
+                print(f"You have already guessed letter {user_guess}.\n")
             # If user guessed wrong letter
             elif user_guess not in word:
-                print(f"{user_guess} is not in the word, try again!")
+                print(f"{user_guess} is not in the word, try again!\n")
                 letters_guessed.append(user_guess)
                 tries -= 1
             # If user guessed a letter in the word
             else:
-                print("You guessed a correct letter!")
+                print("You guessed a correct letter!\n")
                 letters_guessed.append(user_guess)
-                
+
+        else:
+            print("Invalid input, letters only please!\n")
+
+    if tries == 0:
+        # if the user runs out of guesses
+        print("Oops, sorry you ran out of tries!")
+        # Show the hidden word to the user
+        print(f"The word was {word}")
+        play_again()
+
+        # Showes the correct letters in the words at right place, or underscores
         word_hint = ""
-        if guesses == False:
+        if guesses is False:
             for letter in word:
                 if letter in letters_guessed:
                     word_hint += letter

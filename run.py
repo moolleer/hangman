@@ -23,11 +23,11 @@ def welcome():
     # Make sure user can see game instructions
     show_instructions = input(
         "Before we start, do you want to have a look at the game instructions, y/n ?\n")
-
+    # Make sure user type correct input
     while show_instructions != "y" and show_instructions != "n":
         show_instructions = input(
             "Invalid input, please type y to see the instructions or n to start the game.\n")
-
+    # Show instructions or start game
     if show_instructions == "y":
         game_intructions()
     elif show_instructions == "n":
@@ -56,12 +56,12 @@ def game_intructions():
         "Hard: You have 6 guesses to find the right word."
         "The words are both short and long, and could be uncommon.\n"
     )
-
+    
     ready = input("Now, are you ready to play y/n ?\n")
-
+    # Make sure user type correct input
     while ready != "y" and ready != "n":
         ready = input("Invalid input, please type y or n:\n")
-    
+    # Run game or get back to welcome page
     if ready == "y":
         game_run()
     else:
@@ -74,11 +74,11 @@ def get_word(letter):
     Get a randomized word from the words module, depending on the chosen level
     easy, medium or hard.
     """
-    # Make sure the user types the correct letter.
+    # Make sure the user types the correct input.
     while letter != "e" and letter != "m" and letter != "h":
         new_letter = input(f"You typed invalid letter: {letter}, pls try again!\n")
         letter = new_letter
-
+    # Generate the word from the wordlist easy, medium or hard
     if letter == "e":
         e_word = random.choice(words.EASY_WORDS)
         print(e_word)

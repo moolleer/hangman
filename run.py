@@ -109,7 +109,49 @@ def game_run():
     # Unpack the tuple returned
     word, tries, level = get_word(new_word)
     # Print information to the user
-    print(f"You chose to play level {level}. You will have {tries} tries to guess the word!")
+    print(f"You chose to play level {level}. You will have {tries} tries to guess the word!\n")
+
+    print("The word contains: ", len(word), "letters")
+    # Prints a hint of number of letters in the word
+    print(len(word) * "_ ")
+    # List of what the user has guessed
+    letters_guessed = []
+    #for the letters in the word
+    guesses = False
+    
+
+    while tries > 0 and guesses == False:
+        print(f"You have {tries} left")
+        print(f"You have guessed the letters: {letters_guessed}")
+        print("---------------------------------------------------")
+        user_guess = input("Please enter a letter that you guess is in the word:\n").lower()
+        #If the user typed valid input
+        if len(user_guess) == 1 and user_guess.isalpha():
+            # If user already guessed same letter
+            if user_guess in letters_guessed:
+                print(f"You have already guessed letter {user_guess}.")
+            # If user guessed wrong letter
+            elif user_guess not in word:
+                print(f"{user_guess} is not in the word, try again!")
+                letters_guessed.append(user_guess)
+                tries -= 1
+            # If user guessed a letter in the word
+            else:
+                print("You guessed a correct letter!")
+                letters_guessed.append(user_guess)
+                
+        word_hint = ""
+        if guesses == False:
+            for letter in word:
+                if letter in letters_guessed:
+                    word_hint += letter
+                else:
+                    word_hint += "_ "
+            print(word_hint)
+
+
+
+
 
 
 

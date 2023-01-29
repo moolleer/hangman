@@ -78,19 +78,41 @@ def get_word(letter):
     while letter != "e" and letter != "m" and letter != "h":
         new_letter = input(f"You typed invalid letter: {letter}, pls try again!\n")
         letter = new_letter
-    # Generate the word from the wordlist easy, medium or hard
+    
+    tries = 0
+    level = ""
+    # Generate the word from the wordlist easy, medium or hard and tries
     if letter == "e":
         e_word = random.choice(words.EASY_WORDS)
-        print(e_word)
-        return e_word
+        tries = 10
+        level = "easy"
+        return e_word, tries, level
     elif letter == "m":
         m_word = random.choice(words.MEDIUM_WORDS)
-        print(m_word)
-        return m_word
+        tries = 8
+        level = "medium"
+        return m_word, tries, level
     elif letter == "h":
         h_word = random.choice(words.HARD_WORDS)
-        print(h_word)
-        return h_word
+        tries = 6
+        level = "hard"
+        return h_word, tries, level
+
+
+def game_run():
+    """
+    """
+    print("Lets play! Good Luck :)")
+    print("========================================================")
+    # Ask the user to choose difficulty level
+    new_word = input("Please enter your prefered difficulty level, e, m or h.\n")
+    # Unpack the tuple returned
+    word, tries, level = get_word(new_word)
+    # Print information to the user
+    print(f"You chose to play level {level}. You will have {tries} tries to guess the word!")
+
+
+
 
 welcome()
-get_word("e")
+

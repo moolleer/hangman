@@ -6,7 +6,6 @@ def welcome():
     """
     Welcome user and ask if they want to see game instructions
     """
-
     print(" _")
     print("| |")
     print("| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __")
@@ -81,7 +80,8 @@ def get_word(letter):
     
     tries = 0
     level = ""
-    # Generate the word from the wordlist easy, medium or hard and tries
+    # Generate the word from the wordlist easy, medium or hard and add number of tries.
+    # Also returns the difficulty level
     if letter == "e":
         e_word = random.choice(words.EASY_WORDS)
         tries = 10
@@ -99,8 +99,26 @@ def get_word(letter):
         return h_word, tries, level
 
 
+def play_again():
+    """
+    Ask user if they want to play again. 
+    Restart the game or go back to welcome page.
+    """
+    play_game_again = input("Would you like to play again?\n Type y/n.\n")
+    # Make sure user type correct input
+    while play_game_again != "y" and play_game_again != "n":
+        play_game_again = input("Invalid input, type y for yes and n for no")
+    
+    if play_game_again == "y":
+        game_run()
+    else:
+        print("Thank you for playing hangman!!\n If you still want to play just click the run program button:)")
+
+
 def game_run():
     """
+    Main function of the game. Check if user input matches the
+    secret word and compare results. 
     """
     print("Lets play! Good Luck :)")
     print("========================================================")
@@ -114,13 +132,14 @@ def game_run():
     print("The word contains: ", len(word), "letters")
     # Prints a hint of number of letters in the word
     print(len(word) * "_ ")
+    print("\n")
     # List of what the user has guessed
     letters_guessed = []
     #for the letters in the word
     guesses = False
     
     while tries > 0 and guesses is False:
-        print(f"You have {tries} left")
+        print(f"You have {tries} tries left.")
         print(f"You have guessed the letters: {letters_guessed}")
         print("---------------------------------------------------")
         user_guess = input("Please enter a letter that you guess is in the word:\n").lower()
@@ -138,17 +157,8 @@ def game_run():
             else:
                 print("You guessed a correct letter!\n")
                 letters_guessed.append(user_guess)
-
         else:
             print("Invalid input, letters only please!\n")
-
-    if tries == 0:
-        # if the user runs out of guesses
-        print("Oops, sorry you ran out of tries!")
-        # Show the hidden word to the user
-        print(f"The word was {word}")
-        play_again()
-
         # Showes the correct letters in the words at right place, or underscores
         word_hint = ""
         if guesses is False:
@@ -159,12 +169,24 @@ def game_run():
                     word_hint += "_ "
             print(word_hint)
 
+    if tries == 0:
+        # if the user runs out of guesses
+        print("Oops, sorry you ran out of tries!")
+        # Show the hidden word to the user
+        print(f"The word was {word} !")
+        print("___________________________________")
+        play_again()
 
+    elif word_hint == word:
+        # If the user guessed the word right
+        print(f"Congratulations, you win!! You guessed the correct word {word}!")
+        print(f"You did it in {tries} tries.")
+        print("___________________________________")
+        play_again()
 
-
-
-
-
+        
+        
+        
 
 welcome()
 

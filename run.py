@@ -32,6 +32,7 @@ def welcome():
             "\u001b[1;31mInvalid input, please type y to see the instructions"
             " or n to start the game.\u001b[0m\n"
         )
+        print("---------------------------------------------------")
     # Show instructions or start game
     if show_instructions == "y":
         game_intructions()
@@ -237,6 +238,7 @@ def game_run():
         print("\u001b[1;93mOops, sorry you ran out of tries! :(")
         # Show the hidden word to the user
         print(f"The word was:\u001b[0m {word}")
+        print(HANGMANPIC)
         print("---------------------------------------------------")
         play_again()
 
@@ -253,4 +255,12 @@ def game_run():
         play_again()
 
 
+HANGMANPIC = '''\u001b[1;31m
++---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========\u001b[0m'''
 welcome()

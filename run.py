@@ -3,6 +3,7 @@ A Hangman game
 """
 import random
 import words
+import string
 
 
 def welcome():

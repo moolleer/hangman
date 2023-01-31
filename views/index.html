@@ -5,7 +5,9 @@
     <script>
         var term = new Terminal({
             cols: 80,
-            rows: 24
+            rows: 24,
+            lineHeight: 14,
+            fontSize: 14
         });
         term.open(document.getElementById('terminal'));
         term.writeln('Running startup command: python3 run.py');

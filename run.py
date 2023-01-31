@@ -3,7 +3,6 @@ A Hangman game
 """
 import random
 import words
-import string
 
 
 def welcome():
@@ -14,7 +13,7 @@ def welcome():
     print("\u001b[1;36m")
     print(" _")
     print("| |")
-    print("| |--   -- - - --   -- - - -- ---   -- - - --")
+    print("| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __")
     print("| '_ \\ / _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\ ")
     print("| | | | (_| | | | | (_| | | | | | | (_| | | | |")
     print("|_| |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|")

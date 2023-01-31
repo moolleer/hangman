@@ -1,3 +1,6 @@
+"""
+A Hangman game
+"""
 import random
 import words
 
@@ -42,7 +45,8 @@ def welcome():
 
 def game_intructions():
     """
-    Show game instructions and ask user if they are ready to play
+    Show game instructions and ask user if they are ready to play.
+    Runs game or go back to welcome page
     """
     print(
         "=============================================="
@@ -95,6 +99,7 @@ def get_word(letter):
     Checks if user entered correct letter e, m or h.
     Get a randomized word from the words module, depending on the chosen level
     easy, medium or hard.
+    Adds number of tries and level depending on user choice.
     """
     # Make sure the user types the correct input.
     while letter != "e" and letter != "m" and letter != "h":
@@ -109,8 +114,8 @@ def get_word(letter):
     tries = 0
     level = ""
     # Generate the word from the wordlist easy, medium or hard
-    #  and add number of tries.
-    # Also returns the difficulty level
+    # and add number of tries.
+    # Returns the difficulty level
     if letter == "e":
         e_word = random.choice(words.EASY_WORDS)
         tries = 10
@@ -157,7 +162,7 @@ def play_again():
 
 def game_run():
     """
-    Main function of the game. Check if user input matches the
+    Main function of the game. Loops and check if user input matches the
     secret word and compare results.
     """
     print("\u001b[1;36mLets play! Good Luck :)\u001b[0m")
@@ -182,9 +187,11 @@ def game_run():
     letters_guessed = []
     # For the letters in the word
     guesses = set(word)
-
+    # Checks if user have tries left.
+    # Checks if letters are still in the word.
     while tries > 0 and len(guesses) > 0:
         print(f"\u001b[1;36mYou have {tries} tries left.")
+        # Prints the letters user have guessed.
         print(
             "You have guessed the letters: "
             f"\033[38;2;255;165;0m{', '.join(letters_guessed)}"
@@ -212,7 +219,7 @@ def game_run():
                 letters_guessed.append(user_guess)
                 tries -= 1
                 print("---------------------------------------------------")
-            # If user guessed a letter in the word
+            # If user guessed a letter in the target word
             else:
                 print("\u001b[1;92mYou guessed a correct letter!\u001b[0m\n")
                 letters_guessed.append(user_guess)
@@ -221,8 +228,8 @@ def game_run():
         else:
             print("\u001b[1;31mInvalid input, letters only please!\u001b[0m\n")
             print("-------------------------------------------------------")
-        # Showes the correct letters in the words at right place,
-        # or underscores
+        # Show the correct letters in the target word at the correct place,
+        # otherwise show underscores.
         word_hint = ""
         if len(guesses) > 0:
             for letter in word:
@@ -238,6 +245,7 @@ def game_run():
         print("\u001b[1;93mOops, sorry you ran out of tries! :(")
         # Show the hidden word to the user
         print(f"The word was:\u001b[0m {word}")
+        # Display the hangman picture
         print(HANGMANPIC)
         print("---------------------------------------------------")
         play_again()
@@ -263,4 +271,5 @@ HANGMANPIC = '''\u001b[1;31m
  / \  |
       |
 =========\u001b[0m'''
+
 welcome()

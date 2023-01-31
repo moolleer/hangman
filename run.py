@@ -6,6 +6,7 @@ def welcome():
     """
     Welcome user and ask if they want to see game instructions
     """
+    print("================================================\n")
     print(" _")
     print("| |")
     print("| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __")
@@ -24,11 +25,12 @@ def welcome():
         "Before we start, do you want to have"
         " a look at the game instructions, y/n ?\n"
     )
+    print("\n")
     # Make sure user type correct input
     while show_instructions != "y" and show_instructions != "n":
         show_instructions = input(
-            "Invalid input, please type y to see the instructions"
-            " or n to start the game.\n"
+            "\u001b[1;31mInvalid input, please type y to see the instructions"
+            " or n to start the game.\u001b[0m\n"
         )
     # Show instructions or start game
     if show_instructions == "y":
@@ -61,9 +63,13 @@ def game_intructions():
     )
 
     ready = input("Now, are you ready to play y/n ?\n")
+    print("\n")
     # Make sure user type correct input
     while ready != "y" and ready != "n":
-        ready = input("Invalid input, please type y or n:\n")
+        ready = input(
+            "\u001b[1;31mInvalid input,"
+            "please type y or n:\u001b[0m\n"
+        )
     # Run game or get back to welcome page
     if ready == "y":
         game_run()
@@ -80,8 +86,9 @@ def get_word(letter):
     # Make sure the user types the correct input.
     while letter != "e" and letter != "m" and letter != "h":
         new_letter = input(
-            f"You typed invalid letter: {letter},"
-            "pls try again!\n"
+            f"\u001b[1;31mYou typed invalid letter: {letter},"
+            " pls try again, e for easy, m for medium"
+            " or h for hard!\u001b[0m\n"
         )
         letter = new_letter
 
@@ -115,7 +122,10 @@ def play_again():
     play_game_again = input("Would you like to play again?\n Type y/n.\n")
     # Make sure user type correct input
     while play_game_again != "y" and play_game_again != "n":
-        play_game_again = input("Invalid input, type y for yes and n for no\n")
+        play_game_again = input(
+            "\u001b[1;31mInvalid input,"
+            "type y for yes and n for no\u001b[0m\n"
+        )
 
     if play_game_again == "y":
         game_run()
@@ -177,7 +187,7 @@ def game_run():
                 letters_guessed.append(user_guess)
                 guesses.remove(user_guess)
         else:
-            print("Invalid input, letters only please!\n")
+            print("\u001b[1;31mInvalid input, letters only please!\u001b[0m\n")
         # Showes the correct letters in the words at right place,
         # or underscores
         word_hint = ""

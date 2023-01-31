@@ -10,7 +10,8 @@ def welcome():
     Welcome user and ask if they want to see game instructions
     """
     print("================================================\n")
-    print("\u001b[1;36m _")
+    print("\u001b[1;36m")
+    print(" _")
     print("| |")
     print("| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __")
     print("| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ ")
@@ -18,7 +19,7 @@ def welcome():
     print("|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|")
     print("                    __/ |")
     print("                   |___/\u001b[0m")
-
+    print("\n")
     print("================================================\n")
     print("\u001b[1;36mWelcome to play Hangman!!!\u001b[0m")
     print("================================================\n")
@@ -50,31 +51,31 @@ def game_intructions():
     """
     print(
         "=============================================="
-        "============================================"
+        "================================"
     )
     print(
         "\u001b[1;36mHow to play Hangman!\n"
         "Hangman is a simple word guessing game.\n"
         "You try to figure out an unknown word by guessing letters.\n"
-        "If you guess the right letter that is within the word,"
+        "If you guess the right letter that is within the word,\n"
         "the letter appears at its correct position.\n"
-        "If you guess to many letters, which do not appear in the word,"
+        "If you guess to many letters, which do not appear in the word,\n"
         "you lose and the game is over.\n"
     )
     print(
         "You can choose between three different levels:\n"
-        "Easy: You have 10 guesses to find the right word."
+        "Easy: You have 10 guesses to find the right word.\n"
         "The words are shorter and common.\n"
         "Medium: You have 8 guesses to find the right word."
         "The words could be longer and less common.\n"
         "Hard: You have 6 guesses to find the right word."
-        "The words are both short and long, and could be uncommon."
+        "The words are both short\n and long, and could be uncommon."
         "\u001b[0m"
     )
 
     print(
         "=============================================="
-        "============================================"
+        "================================"
     )
 
     ready = input("\u001b[1;36mNow, are you ready to play y/n ?\u001b[0m\n")
@@ -105,7 +106,7 @@ def get_word(letter):
     while letter != "e" and letter != "m" and letter != "h":
         new_letter = input(
             f"\u001b[1;31mYou typed invalid letter: {letter},"
-            " pls try again, e for easy, m for medium"
+            " pls try again, e for easy, m for medium\n"
             " or h for hard!\u001b[0m\n"
         )
         print("---------------------------------------------------")

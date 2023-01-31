@@ -7,23 +7,23 @@ def welcome():
     Welcome user and ask if they want to see game instructions
     """
     print("================================================\n")
-    print(" _")
+    print("\u001b[1;36m _")
     print("| |")
     print("| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __")
     print("| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ ")
     print("| | | | (_| | | | | (_| | | | | | | (_| | | | |")
     print("|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|")
     print("                    __/ |")
-    print("                   |___/")
+    print("                   |___/\u001b[0m")
 
     print("================================================\n")
-    print("Welcome to play Hangman!!!")
+    print("\u001b[1;36mWelcome to play Hangman!!!\u001b[0m")
     print("================================================\n")
 
     # Make sure user can see game instructions
     show_instructions = input(
-        "Before we start, do you want to have"
-        " a look at the game instructions, y/n ?\n"
+        "\u001b[1;36mBefore we start, do you want to have"
+        " a look at the game instructions, y/n ?\u001b[0m\n"
     )
     print("\n")
     # Make sure user type correct input
@@ -44,7 +44,11 @@ def game_intructions():
     Show game instructions and ask user if they are ready to play
     """
     print(
-        "How to play Hangman!\n"
+        "=============================================="
+        "============================================"
+    )
+    print(
+        "\u001b[1;36mHow to play Hangman!\n"
         "Hangman is a simple word guessing game.\n"
         "You try to figure out an unknown word by guessing letters.\n"
         "If you guess the right letter that is within the word,"
@@ -59,10 +63,16 @@ def game_intructions():
         "Medium: You have 8 guesses to find the right word."
         "The words could be longer and less common.\n"
         "Hard: You have 6 guesses to find the right word."
-        "The words are both short and long, and could be uncommon.\n"
+        "The words are both short and long, and could be uncommon."
+        "\u001b[0m"
     )
 
-    ready = input("Now, are you ready to play y/n ?\n")
+    print(
+        "=============================================="
+        "============================================"
+    )
+
+    ready = input("\u001b[1;36mNow, are you ready to play y/n ?\u001b[0m\n")
     print("\n")
     # Make sure user type correct input
     while ready != "y" and ready != "n":
@@ -70,6 +80,8 @@ def game_intructions():
             "\u001b[1;31mInvalid input,"
             "please type y or n:\u001b[0m\n"
         )
+        print("----------------------------------------")
+        print("\n")
     # Run game or get back to welcome page
     if ready == "y":
         game_run()
@@ -90,6 +102,7 @@ def get_word(letter):
             " pls try again, e for easy, m for medium"
             " or h for hard!\u001b[0m\n"
         )
+        print("---------------------------------------------------")
         letter = new_letter
 
     tries = 0
@@ -119,7 +132,10 @@ def play_again():
     Ask user if they want to play again.
     Restart the game or go back to welcome page.
     """
-    play_game_again = input("Would you like to play again?\n Type y/n.\n")
+    play_game_again = input(
+        "\u001b[1;36mWould you like to play again?\n"
+        "Type y/n.\u001b[0m\n"
+    )
     # Make sure user type correct input
     while play_game_again != "y" and play_game_again != "n":
         play_game_again = input(
@@ -130,9 +146,11 @@ def play_again():
     if play_game_again == "y":
         game_run()
     else:
+        print("----------------------------------------")
         print(
-            "Thank you for playing hangman!!\nIf you still want to play"
-            " just click the run program button:)"
+            "\u001b[1;36mThank you for playing hangman!!\n"
+            "If you still want to play"
+            " just click the run program button:)\u001b[0m"
         )
 
 
@@ -141,11 +159,11 @@ def game_run():
     Main function of the game. Check if user input matches the
     secret word and compare results.
     """
-    print("Lets play! Good Luck :)")
+    print("\u001b[1;36mLets play! Good Luck :)\u001b[0m")
     print("========================================================")
     # Ask the user to choose difficulty level
     new_word = input(
-        "Please enter your prefered difficulty level,"
+        "\u001b[1;36mPlease enter your prefered difficulty level,"
         " e, m or h.\n"
     )
     # Unpack the tuple returned
@@ -153,9 +171,9 @@ def game_run():
     tries_start = tries
     # Print information to the user
     print(
-        f"You chose to play level {level}. You will have {tries}"
-        "tries to guess the word!\n")
-    print("The word contains: ", len(word), "letters")
+        f"\u001b[1;36mYou chose to play level {level}. You will have {tries}"
+        " tries to guess the word!\n")
+    print("The word contains:", len(word), "letters\u001b[0m")
     # Prints a hint of number of letters in the word
     print(len(word) * "_ ")
     print("\n")
@@ -165,29 +183,43 @@ def game_run():
     guesses = set(word)
 
     while tries > 0 and len(guesses) > 0:
-        print(f"You have {tries} tries left.")
-        print(f"You have guessed the letters: {', '.join(letters_guessed)}")
+        print(f"\u001b[1;36mYou have {tries} tries left.")
+        print(
+            "You have guessed the letters: "
+            f"\033[38;2;255;165;0m{', '.join(letters_guessed)}"
+            "\u001b[0m"
+        )
         print("---------------------------------------------------")
         user_guess = input(
-            "Please enter a letter that you"
-            " guess is in the word:\n").lower()
+            "\u001b[1;36mPlease enter a letter that you"
+            " guess is in the word:\n\u001b[0m").lower()
         # If the user typed valid input
         if len(user_guess) == 1 and user_guess.isalpha():
             # If user already guessed same letter
             if user_guess in letters_guessed:
-                print(f"You have already guessed letter {user_guess}.\n")
+                print(
+                    "\033[38;2;255;165;0mYou have already guessed "
+                    f"letter {user_guess}.\u001b[0m\n"
+                )
+                print("---------------------------------------------------")
             # If user guessed wrong letter
             elif user_guess not in word:
-                print(f"{user_guess} is not in the word, try again!\n")
+                print(
+                    f"\033[38;2;255;165;0m{user_guess} is not in the word,"
+                    " try again!\n\u001b[0m"
+                )
                 letters_guessed.append(user_guess)
                 tries -= 1
+                print("---------------------------------------------------")
             # If user guessed a letter in the word
             else:
-                print("You guessed a correct letter!\n")
+                print("\u001b[1;92mYou guessed a correct letter!\u001b[0m\n")
                 letters_guessed.append(user_guess)
                 guesses.remove(user_guess)
+                print("---------------------------------------------------")
         else:
             print("\u001b[1;31mInvalid input, letters only please!\u001b[0m\n")
+            print("-------------------------------------------------------")
         # Showes the correct letters in the words at right place,
         # or underscores
         word_hint = ""
@@ -198,23 +230,26 @@ def game_run():
                 else:
                     word_hint += "_ "
             print(word_hint)
+            print("\n")
 
     if tries == 0:
         # if the user runs out of guesses
-        print("Oops, sorry you ran out of tries!")
+        print("\u001b[1;93mOops, sorry you ran out of tries! :(")
         # Show the hidden word to the user
-        print(f"The word was {word}!")
-        print("___________________________________")
+        print(f"The word was:\u001b[0m {word}")
+        print("---------------------------------------------------")
         play_again()
 
     else:
-        # If the user guessed the word right
+        # If the user guessed the word right, show message and how many tries
         tries_left = tries_start - tries
         print(
-            f"Congratulations, you win!! You guessed the correct word: {word}!"
+            "\u001b[1;92m*** Congratulations, you win!! ***\nYou guessed the"
+            f" correct word: {word}"
         )
-        print(f"You did it in {tries_left} tries.")
-        print("___________________________________")
+        print(f"     You did it in {tries_left} tries.")
+        print("          Well done!\u001b[0m")
+        print("---------------------------------------------------")
         play_again()
 
 

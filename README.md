@@ -24,6 +24,27 @@ To provide a better user experience, I decided to use colors throughout the game
  - Correct guess or when word is found, green (\u001b[1;92m)
  - User is out of tries, yellow (\u001b[1;93m)
 
+## Objectives
+
+User objectives
+- Enjoy a simple wordgame that can be played over and over again.
+- Be provided with game instructions.
+- Have the choice to challenge themself.
+- Be provided with feedback from the game.
+
+Developer objectives
+- Create an application with a clear purpose to the user.
+- The application should be easy to navigate.
+- Ensure that the user recives feedback from the application.
+- Give the user possibilities for challenges.
+
+## User stories
+
+
+
+
+
+
 ## Features
 
 ### Existing Features
@@ -108,10 +129,13 @@ This application has been deployed by using the Heroku cloud platform and Code I
 ## Credits & Content
 
 - [Lucid chart](https://www.lucidchart.com/pages/) was used to create the flowchart.
-- Hangman text is taken from [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=testall&f=Star%20Wars&t=Hangman)
+
 - Inspiration for how to create a hangman game is taken from [Aminah](https://mardiyyah.medium.com/a-simple-hangman-learnpythonthroughprojects-series-10-fedda58741b), [Youtube](https://www.youtube.com/watch?v=cJJTnI22IF8) and [Invent with Python](https://inventwithpython.com/invent4thed/chapter8.html).
 - How to use ANSI escape codes for color [Lihaoyi](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
+- Code Institutes README file template as a inspiration for the README file.
 
 
 
 ### Media
+
+- Hangman text is taken from [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=testall&f=Star%20Wars&t=Hangman)

@@ -12,11 +12,11 @@ This Hangman game is written in Python and the user plays in a terminal based wi
 
 ![Flowchart](/docs/README-images/flowchart.PNG)
 
-In the planning process for the game I made a flowchart to identify the essential steps, and to get a visual view over the required steps and the sequential order. I wanted the game to have different levels, and to do this I chose to have three different options for the user, easy, medium and hard. The words vary in difficulty depending on which level the user wants to play, and the number of guesses decreases. I decided to have a words.py file, with three lists that then the target word is randomly selected from. There are about 370 pcs in the easy and medium lists, wich I found on [Github](https://github.com/Xethron/Hangman/blob/master/words.txt) and made some small adjustments to. There are about 200 pcs of hard words, and I found them here [Hangman words](https://www.hangmanwords.com/words).
+In the planning process for the game I made a flowchart to identify the essential steps, and to get a visual view over the required steps and the sequential order. I wanted the game to have different levels, and to do this I chose to have three different options for the user, easy, medium and hard. The words vary in difficulty depending on which level the user wants to play, and the number of guesses decreases. I decided to have a words.py file, with three lists that the hidden word is randomly selected from. There are about 370 words in the easy and medium lists, wich I found on [Github](https://github.com/Xethron/Hangman/blob/master/words.txt) and made some small adjustments to. There are approximately 200 hard words, and I found them here [Hangman words](https://www.hangmanwords.com/words).
 
 ### Color scheme
 
-To provide a better user experience, I decided to use colors throughout the game. I wanted to have a general color instead of the white standard text, and decided a lighter blue that gives a good contrast against the black background. If the user input some invalid character or letter, this would be shown with a red text to get the users attention. The user should also pay attention to wrong guesses, if the letter already been used or to see with letters have been previously guessed. To this I decided to use a bright orange. For correct guesses or when the word was revealed a light green color was chosen. To stand ut when the user is out of tries, I choose a bright yellow color.
+To provide a better user experience, I decided to use colors throughout the game. I wanted to have a general color instead of the white standard text, and decided a lighter blue that gives a good contrast against the black background. If the user input some invalid character or letter, this would be shown with a red text to get the users attention. The user should also pay attention to wrong guesses, if the letter already been used or to see with letters have been previously guessed. To this I decided to use a bright orange color. For correct guesses, or when the word is revealed, a light green color was chosen. To stand ut when the user is out of tries, I choose a bright yellow color.
 
  - General text, blue (\u001b[1;36m)
  - Error messages, red (\u001b[1;31m)
@@ -56,7 +56,27 @@ Finally the user is asked to type in a letter that they would like to guess is i
 
 ![Letter not in word](/docs/README-images/not-in-word.PNG)
 
+- If the user tries to guess the same letter twice, the message says that the letter have already been guessed. No tries are taken of and the user is asked to enter a new letter. 
+
+![Guessed letter](/docs/README-images/dubbel-guess.PNG)
+
+- If a user runs out of guesses, a message shows them that they don't have any tries left and then reveals the hidden word. A hangman picture in red is also shown. The user is then asked if they wan't to play again. 
+
+![Game over](/docs/README-images/game-over.PNG)
+
+- If the user guess the correct word, a message congratulates the user and shows the hidden word, how many tries it took to guess the word, and then ask if they want to play again by enter y for yes or n for no. 
+
+![Correct word](/docs/README-images/correct-word.PNG)
+
+- The user can choose to play again or not. If they want to play again, the game will restart and ask for which difficulty level they want to play. Otherwise a message thanks the user for playing and how they can play again if they still want to. 
+
+![Play again](/docs/README-images/play-again-no.PNG)
+
 ### Future Features
+
+Leaderboard
+- It would be a fun feature to have a leaderboard for players. The user would type in their name and then points would be added depending on wich level they play and in how many tries they can find the hidden word. 
+- Initially I planned to have a visible hangman picture of every guess, so the user could see how many tries they had left. I waited with this feature to the end of the project, to see if I would have any extra time to implement this. In the end I didn't have any time for more changes, so I will leave this to implement in the future.   
 
 ## Testing
 
@@ -87,6 +107,7 @@ This application has been deployed by using the Heroku cloud platform and Code I
 
 ## Credits & Content
 
+- [Lucid chart](https://www.lucidchart.com/pages/) was used to create the flowchart.
 - Hangman text is taken from [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=testall&f=Star%20Wars&t=Hangman)
 - Inspiration for how to create a hangman game is taken from [Aminah](https://mardiyyah.medium.com/a-simple-hangman-learnpythonthroughprojects-series-10-fedda58741b), [Youtube](https://www.youtube.com/watch?v=cJJTnI22IF8) and [Invent with Python](https://inventwithpython.com/invent4thed/chapter8.html).
 - How to use ANSI escape codes for color [Lihaoyi](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).

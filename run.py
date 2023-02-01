@@ -9,7 +9,11 @@ def welcome():
     """
     Welcome user and ask if they want to see game instructions
     """
-    print("================================================\n")
+    print(
+        "==========================================================="
+        "=========\n"
+    )
+    # Print the hangman logo
     print("\u001b[1;36m")
     print(
         "##     ##    ###    ##    ##  ######   ##     ##    ###    ##    ##"
@@ -34,9 +38,15 @@ def welcome():
         "\u001b[0m"
     )
     print("\n")
-    print("================================================\n")
+    print(
+        "==========================================================="
+        "=========\n"
+    )
     print("\u001b[1;36mWelcome to play Hangman!!!\u001b[0m")
-    print("================================================\n")
+    print(
+        "==========================================================="
+        "=========\n"
+    )
 
     # Make sure user can see game instructions
     show_instructions = input(

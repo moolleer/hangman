@@ -64,6 +64,27 @@ All testing information can be found here [testing.md](https://github.com/moolle
 
 ## Deployment
 
+This application has been deployed by using the Heroku cloud platform and Code Institutes mock terminal for Heroku.
+- Steps for deployment:
+  - On Heroku dashboard click "create a new app".
+  - Assign a unique name to your application. 
+  - Choose a region, EU or USA.
+  - Select "create app".
+  - Navigate to "settings" at the top of the page.
+  - If there is any sensitive data that are kept in the gitignore file, you need to allow Heroku access to it by creating a config var. Provide a key in capital letters, example: CREDS, and then add the content of that "CREDS"-file into the value area. 
+  - Add another config var with key: PORT, and value of 8000. Then select add.
+  - Select "add buildpack".
+  - Click python first.
+  - Repeat again but this time click nodejs.
+  - The order is important, so make sure you select python first and nodejs second. If not you can drag and drop them in the correct order. 
+  - Go back up on top of the page and select "deploy". 
+  - Choose deployment method. I choose Github. 
+  - Then search for your repository name and connect it.    
+  - Then you have two options:
+     - The first option, enable automatic deployment, which means that Heroku will rebuild the app every time a change is pushed to github.
+     - The other option, manually deploy, is the choice I made. 
+  - When the project has been deployed, a view button will show with a link to the running app. 
+
 ## Credits & Content
 
 - Hangman text is taken from [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=testall&f=Star%20Wars&t=Hangman)

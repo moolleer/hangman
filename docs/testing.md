@@ -117,6 +117,6 @@ words.py
 
 ### Bugs and fixes
 
-- The initial Hangman text worked without any problem in the Gitpod terminal, but after deployment and in the mockup terminal the apperance was very strange looking, as underscore wasn't showing in the deployed version. I tried to do research myself, but couldn't find anythyng relevant  to this issue. After some time I contacted tutor support for assistance. After a long session the issue was still not fixed. I then decided to not waste anymore time and go for a new logo.
+- The initial Hangman text worked without any problem in the Gitpod terminal, but after deployment and in the mockup terminal the apperance was very strange looking, as underscore wasn't showing in the deployed version. I tried to do research myself, but couldn't find anythyng relevant  to this issue. After some time I contacted tutor support for assistance. They said it had something to do with the line height, and we tried to experiment to fix it, but without any success. I then decided to not waste anymore time and go for a new logo.
 
 ![Underscore](/docs/README-images/underscore-bug.png)

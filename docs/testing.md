@@ -7,15 +7,15 @@
    - The game is expected to start if the user enters n.
    - Invalid input message in red is expected if user enters anything else but y or n.
 
-Enter y shows the instructions as expected.
+Enter y and the instructions are showed, result as expected.
 
 ![Instructions y](/docs/README-images/instructions-y.png)
 
-Enter n starts the game as expected.
+Enter n and the game starts, result as expected.
 
 ![Instructions n](/docs/README-images/instructions-no.png)
 
-Tested to enter j, and then 3. An invalid input gives an error message in red as expected. When y is entered the instructions shows.
+Test to enter j, and then 3. An invalid input gives an error message in red, result as expected. When y is entered the instructions shows.
 
 ![Instructions invalid](/docs/README-images/instructions-invalid.png)
 
@@ -24,13 +24,13 @@ Tested to enter j, and then 3. An invalid input gives an error message in red as
      - The user is expected to be directed back to welcome message when they enter n.
      - Invalid input message in red is expected if user enters anything else but y or n.
 
-Enter y and the game starts as expected.
+Enter y and the game starts, result as expected.
 
 ![Instructions start game](/docs/README-images/instructions-play.png)
 
-When n is entered the user gets redirected back to welcome message as expected.
+When n is entered the user gets redirected back to welcome message, result as expected.
 
-Tested to enter j, and then 3. An invalid input gives an error message in red as expected. When y is entered the game starts.
+Test to enter j, and then 3. An invalid input gives an error message in red, result as expected. When y is entered the game starts.
 
 ![Instructions invalid](/docs/README-images/instructions-invalid-play.png)
 
@@ -43,7 +43,7 @@ The message, level and number of tries works as expected.
 
 ![Levels](/docs/README-images/choose-level.png)
 
-Tested to enter j, and then 3. An invalid input gives an error message in red as expected. When e, m or h is entered the game starts.
+Test to enter j, and then 3. An invalid input gives an error message in red, result as expected. When e, m or h is entered the game starts.
 
 ![Levels](/docs/README-images/chosen-level.png)
 
@@ -59,15 +59,15 @@ Check user guess and show message in orange for letter not in word works as expe
 
 ![Guess](/docs/README-images/guess-word-not-in-word.png)
 
-If user guess the same letter as already been guessed a orange message tells this to the user works as expexted.
+If user guess the same letter again, a orange message tells this to the user, result as expexted.
 
 ![Already guessed](/docs/README-images/guessed-letter.png)
 
-When the user guess a letter that is in the word, a green message tells this to the user and the letter is placed at the correct position instead of an underscore. The guessed letters is also added to the list (marked in red) as expected.
+When the user guess a letter that is in the word, a green message tells this to the user and the letter is placed at the correct position instead of an underscore. The guessed letters is also added to the list (marked in red), results as expected.
 
 ![Letter in word](/docs/README-images/letter-is-inword.png)
 
-If the user enter anything but a letter a invalid input message in red shows as expected.
+If the user enter anything but a letter a invalid input message in red shows, result as expected.
 
 ![Invalid](/docs/README-images/guess-invalid-char.PNG)
 
@@ -81,13 +81,13 @@ The message and reveal of the hidden word works as expected.
 6. Correct word
     - If the user guesses the word right, a congratulations message in green is expected.
 
-The correct word message is shown as expecting.
+The correct word message is shown, result as expected.
 
 ![Correct word](/docs/README-images/correct-word.PNG)
 
 
 7. Play again
-     - When the user have run out of tries or found the hidden word, a message that ask if they wan't to play again or not is expected.
+     - When the user runs out of tries, or find the hidden word, a message that ask if they wan't to play again or not is expected.
      - If the user chose to play again the game starts over and ask user to enter a letter is expected.
      - If the user don't want to play again a farewell message is expected.
      - Invalid input message in red is expected if user enters anything else but y or n.
@@ -107,7 +107,11 @@ The invalid input message works as expected.
 ### Code Validation
 Python code was validated by Code Institutes [Python Linter](https://pep8ci.herokuapp.com/) and no errors where found.
 
+run.py
+
 ![Python validation](/docs/README-images/python-linter.PNG)
+
+words.py
 
 ![Python validation words](/docs/README-images/words.py.png)
 

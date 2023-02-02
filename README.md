@@ -38,13 +38,6 @@ Developer objectives
 - Ensure that the user recives feedback from the application.
 - Give the user possibilities for challenges.
 
-## User stories
-
-
-
-
-
-
 ## Features
 
 ### Existing Features
@@ -97,6 +90,8 @@ Finally the user is asked to type in a letter that they would like to guess is i
 
 Leaderboard
 - It would be a fun feature to have a leaderboard for players. The user would type in their name and then points would be added depending on wich level they play and in how many tries they can find the hidden word. 
+
+Hangman Pictures
 - Initially I planned to have a visible hangman picture of every guess, so the user could see how many tries they had left. I waited with this feature to the end of the project, to see if I would have any extra time to implement this. In the end I didn't have any time for more changes, so I will leave this to implement in the future.   
 
 ## Testing
@@ -129,9 +124,9 @@ This application has been deployed by using the Heroku cloud platform and Code I
 ## Credits & Content
 
 - [Lucid chart](https://www.lucidchart.com/pages/) was used to create the flowchart.
-
 - Inspiration for how to create a hangman game is taken from [Aminah](https://mardiyyah.medium.com/a-simple-hangman-learnpythonthroughprojects-series-10-fedda58741b), [Youtube](https://www.youtube.com/watch?v=cJJTnI22IF8) and [Invent with Python](https://inventwithpython.com/invent4thed/chapter8.html).
 - How to use ANSI escape codes for color [Lihaoyi](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html).
+- My mentor Marcel for ideas and help. 
 - Code Institutes README file template as a inspiration for the README file.
 
 

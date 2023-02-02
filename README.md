@@ -8,6 +8,15 @@ This Hangman game is written in Python and the user plays in a terminal based wi
 
 ### [View the live website here](https://mooller-hangman.herokuapp.com/)
 
+## Table of contents
+
+1. [Structure](https://github.com/moolleer/hangman#structure)
+    - [Color scheme](https://github.com/moolleer/hangman#color-scheme)
+
+2. [Objectives](https://github.com/moolleer/hangman#objectives)
+
+3. [Features](https://github.com/moolleer/hangman#features)
+
 ## Structure
 
 ![Flowchart](/docs/README-images/flowchart.PNG)

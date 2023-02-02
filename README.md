@@ -16,6 +16,16 @@ This Hangman game is written in Python and the user plays in a terminal based wi
 2. [Objectives](https://github.com/moolleer/hangman#objectives)
 
 3. [Features](https://github.com/moolleer/hangman#features)
+   - [Existing Features](https://github.com/moolleer/hangman#existing-features)
+   - [Future Features](https://github.com/moolleer/hangman#future-features)
+
+4. [Testing](https://github.com/moolleer/hangman#testing)
+
+5. [Deployment](https://github.com/moolleer/hangman#deployment)
+
+6. [Credits & Content](https://github.com/moolleer/hangman#credits--content)
+
+7. [Media](https://github.com/moolleer/hangman#media)
 
 ## Structure
 
